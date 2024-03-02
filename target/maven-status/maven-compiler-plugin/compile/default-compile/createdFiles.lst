@@ -1,0 +1,6 @@
+jagg\empleados\persistencia\EmpleadoJpaController.class
+jagg\empleados\persistencia\exceptions\IllegalOrphanException.class
+jagg\empleados\persistencia\exceptions\PreexistingEntityException.class
+jagg\empleados\logica\Empleado.class
+jagg\empleados\logica\Controladora.class
+jagg\empleados\persistencia\exceptions\NonexistentEntityException.class
