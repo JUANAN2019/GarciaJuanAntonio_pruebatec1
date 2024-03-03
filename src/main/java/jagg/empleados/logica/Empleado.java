@@ -16,7 +16,7 @@ public class Empleado implements Serializable{
     private String nombre;
     private String apellido;
     private String cargo;
-    private double salario;
+    private int salario;
     private String fechaInicio;
     
     
@@ -24,7 +24,7 @@ public class Empleado implements Serializable{
     public Empleado() {
     }
 
-    public Empleado(  String nombre, String apellido, String cargo, double salario, String fechaInicio) {
+    public Empleado(  String nombre, String apellido, String cargo, int salario, String fechaInicio) {
         
         this.nombre = nombre;
         this.apellido = apellido;
@@ -69,7 +69,7 @@ public class Empleado implements Serializable{
         return salario;
     }
 
-    public void setSalario(double salario) {
+    public void setSalario(int salario) {
         this.salario = salario;
     }
 

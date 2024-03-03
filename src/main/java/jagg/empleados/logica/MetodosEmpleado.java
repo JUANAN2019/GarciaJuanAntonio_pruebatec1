@@ -43,8 +43,12 @@ public class MetodosEmpleado {
         String nombre = introducirString("Nombre");
         String apellido = introducirString("Apellido");
         String cargo = introducirString("Cargo");
-        String fecha = introducirFecha("Fecha de nacimiento");
-        double salario = introducirDouble("Salario");
+        String fecha = introducirFecha("Fecha de inicio");
+        int salario = introducirSalario("Salario");
+
+        Empleado empleado1 = new Empleado(nombre, apellido, cargo, salario, fecha);
+        Controladora control = new Controladora();
+        control.crearEmpleado(empleado1);
 
         // ... Validaciones adicionales ...
         // Guardar el empleado en la base de datos o realizar otra acción
@@ -58,7 +62,7 @@ public class MetodosEmpleado {
             if (valor.isEmpty()) {
                 System.out.println("El campo " + nombreVariable + " no puede estar vacío.");
             }
-        } while (valor.isEmpty());
+        } while (valor.isEmpty() || !(valor instanceof String));
         return valor;
     }
 
@@ -67,34 +71,67 @@ public class MetodosEmpleado {
         do {
             System.out.println("Introduzca " + nombreVariable + " (formato dd/mm/aaaa): ");
             valor = Lectura.leerLinea();
+            if (valor.isEmpty()) {
+                System.out.println("El campo " + nombreVariable + " no puede estar vacío.");
+            }
+        } while (valor.isEmpty());
+        return valor;
+        /*String valor;
+        do {
+            System.out.println("Introduzca " + nombreVariable + " (formato dd/mm/aaaa): ");
+            valor = Lectura.leerLinea();
             if (!validarFecha(valor)) {
+
                 System.out.println("El campo " + nombreVariable + " no tiene un formato válido.");
             }
         } while (!validarFecha(valor));
-        return valor;
+        return valor;*/
     }
 
-    public double introducirDouble(String nombreVariable) {
-        double valor;
+    public int introducirSalario(String nombreVariable) {
+        int valor = 0;
+        String valorString;
+        boolean esNumero;
+
         do {
             System.out.println("Introduzca " + nombreVariable + ": ");
-            try {
-                valor = Double.parseDouble(Lectura.leerLinea());
-                if (valor <= 0) {
-                    System.out.println("El campo " + nombreVariable + " debe ser un valor positivo.");
-                }
-            } catch (NumberFormatException e) {
-                System.out.println("El campo " + nombreVariable + " debe ser un número decimal.");
-                valor = Double.NaN;
+            valorString = Lectura.leerLinea();
+            esNumero = valorString.matches("^[0-9]+$");
+
+            if (!esNumero) {
+                System.out.println("El valor introducido no es un número.");
             }
-        } while (valor <= 0);
+            if(valorString.isEmpty()){
+                System.out.println("El campo " + nombreVariable + " no puede estar vacío.");
+            }
+
+        } while (!esNumero);
+
+        valor = Integer.parseInt(valorString);
         return valor;
     }
 
-    private boolean validarFecha(String fecha) {
-        // ... Implementación de la validación de la fecha ...
+
+    /*private boolean validarDouble(double valor) {
+        // Validar si el valor está vacío
+        if (Double.isNaN(valor)) {
+            System.out.println("El campo " + nombreVariable + " no puede estar vacío.");
+            return false;
+        }
+
+        // Validar si el valor es un número decimal finito
+    
+        if (!Double.isFinite(valor)) {
+            System.out.println("El valor introducido no es un número decimal.");
+            return false;
+        }
+
+        // Puedes agregar validaciones adicionales aquí
+        // ...
+        return true;
     }
 
+     */
     public void listarEmpleados() {
 
     }
