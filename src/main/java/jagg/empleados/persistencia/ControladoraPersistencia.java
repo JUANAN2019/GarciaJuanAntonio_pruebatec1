@@ -39,5 +39,8 @@ public class ControladoraPersistencia {
             Logger.getLogger(ControladoraPersistencia.class.getName()).log(Level.SEVERE, null, ex);
         }
     }
+    public List<Empleado> traerPorCargo(String cargo){
+        return empleadoJpa.findByCargo(cargo);
+    }
 
 }

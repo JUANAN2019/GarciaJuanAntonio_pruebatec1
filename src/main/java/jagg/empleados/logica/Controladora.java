@@ -26,6 +26,9 @@ public class Controladora {
     void editarEmpleado(Empleado empleado) {
        controlPersis.editarEmpleado(empleado);
     }
+    List<Empleado> traerPorCargo(String cargo) {
+        return controlPersis.traerPorCargo(cargo);
+    }
 
 }
 

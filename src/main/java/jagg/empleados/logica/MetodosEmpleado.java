@@ -5,6 +5,7 @@ import java.util.List;
 public class MetodosEmpleado {
 
     Controladora control = new Controladora();
+
     public boolean menuInicial() {
         boolean salir = false;
         int op = 0;
@@ -104,7 +105,7 @@ public class MetodosEmpleado {
             if (!esNumero) {
                 System.out.println("El valor introducido no es un número.");
             }
-            if(valorString.isEmpty()){
+            if (valorString.isEmpty()) {
                 System.out.println("El campo " + nombreVariable + " no puede estar vacío.");
             }
 
@@ -114,12 +115,10 @@ public class MetodosEmpleado {
         return valor;
     }
 
-
-    
     public void listarEmpleados() {
         List<Empleado> empleados = control.traerEmpleados();
-                
-        for(Empleado emp :empleados){
+
+        for (Empleado emp : empleados) {
             System.out.println(emp.toString());
         }
     }
@@ -130,13 +129,41 @@ public class MetodosEmpleado {
         System.out.println("Introduzca el Id del empleado que quier editar");
         int id = Lectura.leerInt();
         Empleado empleado = control.traerEmpleado(id);
-        
+        System.out.println(empleado);
+
         //cambiar el dato que queremos en la variable empleado que es donde metemos el objeto traido de la bd
         //tengo que hacer la logica para que se elija el dato que queremos cambiar
         System.out.println("Introduzca el dato que quiere cambiar");
+        String campo = Lectura.leerLinea();
+        System.out.println("Introduzca el valor que quiere asignar al campo " + campo);
+
+        switch (campo) {
+            case "apellido":
+                String apellido = Lectura.leerLinea();
+                empleado.setApellido(apellido);
+                break;
+            case "nombre":
+                String nombre = Lectura.leerLinea();
+                empleado.setNombre(nombre);
+                break;
+            case "cargo":
+                String cargo = Lectura.leerLinea();
+                empleado.setCargo(cargo);
+                break;
+            case "salario":
+                int salario = Lectura.leerInt();
+                empleado.setSalario(salario);
+                break;
+            case "fechainicio":
+                String fechaInicio = Lectura.leerLinea();
+                empleado.setFechaInicio(fechaInicio);
+                break;
+            default:
+                throw new AssertionError();
+        }
+
         
-        empleado.setNombre("fernando");
-        
+
         //ahora editamos el empleado con el objeto en la variable empleado 
         control.editarEmpleado(empleado);
     }
@@ -148,6 +175,14 @@ public class MetodosEmpleado {
     }
 
     public void empleadoPorCargo() {
+        System.out.println("Introduzca el cargo que desempeñan los empleados de los que quiere la lista:");
+        String cargo = Lectura.leerLinea();
+        System.out.println("Los empleados con el cargo " + cargo + " son: ");
+        List<Empleado> empleados = control.traerPorCargo(cargo);
+
+        for (Empleado emp : empleados) {
+            System.out.println(emp.toString());
+        }
 
     }
 
