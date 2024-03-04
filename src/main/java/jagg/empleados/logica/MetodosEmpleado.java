@@ -1,7 +1,10 @@
 package jagg.empleados.logica;
 
+import java.util.List;
+
 public class MetodosEmpleado {
 
+    Controladora control = new Controladora();
     public boolean menuInicial() {
         boolean salir = false;
         int op = 0;
@@ -47,7 +50,7 @@ public class MetodosEmpleado {
         int salario = introducirSalario("Salario");
 
         Empleado empleado1 = new Empleado(nombre, apellido, cargo, salario, fecha);
-        Controladora control = new Controladora();
+        //Controladora control = new Controladora();
         control.crearEmpleado(empleado1);
 
         // ... Validaciones adicionales ...
@@ -89,12 +92,12 @@ public class MetodosEmpleado {
     }
 
     public int introducirSalario(String nombreVariable) {
-        int valor = 0;
+        int valor;
         String valorString;
         boolean esNumero;
 
         do {
-            System.out.println("Introduzca " + nombreVariable + ": ");
+            System.out.println("Introduzca " + nombreVariable + ": debe ser un numero entero");
             valorString = Lectura.leerLinea();
             esNumero = valorString.matches("^[0-9]+$");
 
@@ -112,36 +115,36 @@ public class MetodosEmpleado {
     }
 
 
-    /*private boolean validarDouble(double valor) {
-        // Validar si el valor está vacío
-        if (Double.isNaN(valor)) {
-            System.out.println("El campo " + nombreVariable + " no puede estar vacío.");
-            return false;
-        }
-
-        // Validar si el valor es un número decimal finito
     
-        if (!Double.isFinite(valor)) {
-            System.out.println("El valor introducido no es un número decimal.");
-            return false;
-        }
-
-        // Puedes agregar validaciones adicionales aquí
-        // ...
-        return true;
-    }
-
-     */
     public void listarEmpleados() {
-
+        List<Empleado> empleados = control.traerEmpleados();
+                
+        for(Empleado emp :empleados){
+            System.out.println(emp.toString());
+        }
     }
 
     public void actualizarEmpleado() {
-
+        //tengo que pulir la logica y los mensajes que da la consola para ir ofreciendo meter en consola que se quiere cambiar
+        //traer primero al empleado que vamos a editar
+        System.out.println("Introduzca el Id del empleado que quier editar");
+        int id = Lectura.leerInt();
+        Empleado empleado = control.traerEmpleado(id);
+        
+        //cambiar el dato que queremos en la variable empleado que es donde metemos el objeto traido de la bd
+        //tengo que hacer la logica para que se elija el dato que queremos cambiar
+        System.out.println("Introduzca el dato que quiere cambiar");
+        
+        empleado.setNombre("fernando");
+        
+        //ahora editamos el empleado con el objeto en la variable empleado 
+        control.editarEmpleado(empleado);
     }
 
     public void eliminarEmpleado() {
-
+        System.out.println("Introduzca el id del empleado que desea eliminar");
+        int id = Lectura.leerInt();
+        control.eliminarEmpleado(id);
     }
 
     public void empleadoPorCargo() {

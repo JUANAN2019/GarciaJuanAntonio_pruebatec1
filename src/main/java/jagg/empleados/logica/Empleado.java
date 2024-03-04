@@ -24,6 +24,8 @@ public class Empleado implements Serializable{
     public Empleado() {
     }
 
+   
+
     public Empleado(  String nombre, String apellido, String cargo, int salario, String fechaInicio) {
         
         this.nombre = nombre;
@@ -32,6 +34,7 @@ public class Empleado implements Serializable{
         this.salario = salario;
         this.fechaInicio = fechaInicio;
     }
+    
 
     public int getId() {
         return id;
@@ -81,6 +84,9 @@ public class Empleado implements Serializable{
         this.fechaInicio = fechaInicio;
     }
     
-    
+     @Override
+    public String toString() {
+        return "Empleado{" + "id=" + id + ", nombre=" + nombre + ", apellido=" + apellido + ", cargo=" + cargo + ", salario=" + salario + ", fechaInicio=" + fechaInicio + '}';
+    }
             
 }

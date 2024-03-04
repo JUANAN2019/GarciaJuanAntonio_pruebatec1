@@ -1,6 +1,4 @@
 package jagg.empleados.persistencia;
-
-import jagg.empleados.Empleados;
 import jagg.empleados.logica.Empleado;
 import jagg.empleados.persistencia.exceptions.NonexistentEntityException;
 import java.io.Serializable;
