@@ -127,9 +127,6 @@ public class EmpleadoJpaController implements Serializable {
 
     public List<Empleado> findByCargo(String cargo) {
         EntityManager em = getEntityManager();
-        // Consulta personalizada para buscar empleados por cargo
-        // Aquí asumimos que "cargo" es un atributo en la clase Empleado
-        // Ajusta esto según tu diseño específico
         return em.createQuery("SELECT e FROM Empleado e WHERE e.cargo = :cargo", Empleado.class)
                 .setParameter("cargo", cargo)
                 .getResultList();

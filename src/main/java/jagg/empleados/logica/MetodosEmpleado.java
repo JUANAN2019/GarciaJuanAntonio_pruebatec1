@@ -86,9 +86,21 @@ public class MetodosEmpleado {
     }
 
     public String introducirFecha(String nombreVariable) {
-        System.out.println("Introduzca " + nombreVariable + " (formato dd/mm/aaaa): ");
+        String regex = "^(0[1-9]|[1-2][0-9]|3[0-1])/(0[1-9]|1[0-2])/(19|20)\\d{2}$";
+        String fecha = "";
+        boolean fechaOk = false;
+        while(!fechaOk) {
+            System.out.println("Introduzca " + nombreVariable + " (formato dd/mm/aaaa): ");
+            fecha = Lectura.leerLinea();
+            if (fecha.matches(regex)) {
+                System.out.println("La fecha tiene el formato correcto: dd/mm/aaaa");
+                fechaOk = true;
+            } else {
+                System.out.println("La fecha no tiene el formato correcto: dd/mm/aaaa.");
+            }
+        }
 
-        return Lectura.leerLinea();
+        return fecha;
     }
 
     public int introducirSalario(String nombreVariable) {
@@ -175,10 +187,8 @@ public class MetodosEmpleado {
                         default:
                             System.out.println("Opción no válida. Por favor, introduzca una opción del 1 al 3.");
                     }
-
                 }
             }while(!campoValido);
-
         }
     }
 
@@ -239,7 +249,8 @@ public class MetodosEmpleado {
     public void salirPrograma(){
         System.out.println("Ha salido del programa.");
     }
-   public void menuDosOp(){
+   //Menu con dos opciones que uso cuando listo empleados
+    public void menuDosOp(){
        boolean campoValido = false;
        while (!campoValido) {
            System.out.println("¿Qué desea hacer a continuación?");
@@ -262,4 +273,5 @@ public class MetodosEmpleado {
            }
        }
    }
+
 }

@@ -2,28 +2,15 @@ package jagg.empleados.logica;
 
 import java.util.Scanner;
 
+//Clase Lectura, para leer los datos introducidos en la aplicacion y la verificacion de estos y que no estan vacios
 public class Lectura {
 
-//    public static int leerInt() {
-//        Scanner sc = new Scanner(System.in);
-//
-//        while (true) {
-//            try {
-//                int n = sc.nextInt();
-//                return n;
-//            } catch (Exception e) {
-//                System.out.println("Debe escribir un número entero");
-//                sc.nextLine();
-//            }
-//        }
-//    }
 public static int leerInt() {
     Scanner sc = new Scanner(System.in);
     String linea;
     int n ;
 
     do {
-       //System.out.print("Introduzca el número: ");
         linea = sc.nextLine();
 
         if (linea.isEmpty()) {
@@ -55,11 +42,6 @@ public static int leerInt() {
         }
     }
 
-//    public static String leerLinea() {
-//        Scanner sc = new Scanner(System.in);
-//
-//        return sc.nextLine();
-//    }
     public static String leerLinea() {
         Scanner sc = new Scanner(System.in);
         String linea;
