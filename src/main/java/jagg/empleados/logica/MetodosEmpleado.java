@@ -51,73 +51,27 @@ public class MetodosEmpleado {
         int salario = introducirSalario("Salario");
 
         Empleado empleado1 = new Empleado(nombre, apellido, cargo, salario, fecha);
-        //Controladora control = new Controladora();
         control.crearEmpleado(empleado1);
-
-        // ... Validaciones adicionales ...
-        // Guardar el empleado en la base de datos o realizar otra acción
     }
 
     public String introducirString(String nombreVariable) {
-        String valor;
-        do {
-            System.out.println("Introduzca " + nombreVariable + ": ");
-            valor = Lectura.leerLinea();
-            if (valor.isEmpty()) {
-                System.out.println("El campo " + nombreVariable + " no puede estar vacío.");
-            }
-        } while (valor.isEmpty() || !(valor instanceof String));
-        return valor;
+        System.out.println("Introduzca " + nombreVariable + ": ");
+        return Lectura.leerLinea();
     }
 
     public String introducirFecha(String nombreVariable) {
-        String valor;
-        do {
-            System.out.println("Introduzca " + nombreVariable + " (formato dd/mm/aaaa): ");
-            valor = Lectura.leerLinea();
-            if (valor.isEmpty()) {
-                System.out.println("El campo " + nombreVariable + " no puede estar vacío.");
-            }
-        } while (valor.isEmpty());
-        return valor;
-        /*String valor;
-        do {
-            System.out.println("Introduzca " + nombreVariable + " (formato dd/mm/aaaa): ");
-            valor = Lectura.leerLinea();
-            if (!validarFecha(valor)) {
+        System.out.println("Introduzca " + nombreVariable + " (formato dd/mm/aaaa): ");
 
-                System.out.println("El campo " + nombreVariable + " no tiene un formato válido.");
-            }
-        } while (!validarFecha(valor));
-        return valor;*/
+        return Lectura.leerLinea();
     }
 
     public int introducirSalario(String nombreVariable) {
-        int valor;
-        String valorString;
-        boolean esNumero;
-
-        do {
-            System.out.println("Introduzca " + nombreVariable + ": debe ser un numero entero");
-            valorString = Lectura.leerLinea();
-            esNumero = valorString.matches("^[0-9]+$");
-
-            if (!esNumero) {
-                System.out.println("El valor introducido no es un número.");
-            }
-            if (valorString.isEmpty()) {
-                System.out.println("El campo " + nombreVariable + " no puede estar vacío.");
-            }
-
-        } while (!esNumero);
-
-        valor = Integer.parseInt(valorString);
-        return valor;
+        System.out.println("Introduzca " + nombreVariable + ": debe ser un numero entero");
+        return Lectura.leerInt();
     }
 
     public void listarEmpleados() {
         List<Empleado> empleados = control.traerEmpleados();
-
         for (Empleado emp : empleados) {
             System.out.println(emp.toString());
         }
@@ -126,7 +80,7 @@ public class MetodosEmpleado {
     public void actualizarEmpleado() {
         //tengo que pulir la logica y los mensajes que da la consola para ir ofreciendo meter en consola que se quiere cambiar
         //traer primero al empleado que vamos a editar
-        System.out.println("Introduzca el Id del empleado que quier editar");
+        System.out.println("Introduzca el Id del empleado que quiere editar");
         int id = Lectura.leerInt();
         Empleado empleado = control.traerEmpleado(id);
         System.out.println(empleado);
@@ -135,6 +89,7 @@ public class MetodosEmpleado {
         //tengo que hacer la logica para que se elija el dato que queremos cambiar
         System.out.println("Introduzca el dato que quiere cambiar");
         String campo = Lectura.leerLinea();
+
         System.out.println("Introduzca el valor que quiere asignar al campo " + campo);
 
         switch (campo) {
@@ -162,7 +117,6 @@ public class MetodosEmpleado {
                 throw new AssertionError();
         }
 
-        
 
         //ahora editamos el empleado con el objeto en la variable empleado 
         control.editarEmpleado(empleado);
@@ -183,7 +137,6 @@ public class MetodosEmpleado {
         for (Empleado emp : empleados) {
             System.out.println(emp.toString());
         }
-
     }
 
     /*public static boolean esVariableValida(String variable) {
@@ -193,6 +146,7 @@ public class MetodosEmpleado {
                 return false;
             }
         }
+
 
         // Validar que la primera letra sea mayúscula
         if (!Character.isUpperCase(variable.charAt(0))) {
