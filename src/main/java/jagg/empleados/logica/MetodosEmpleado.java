@@ -47,6 +47,7 @@ public class MetodosEmpleado {
         String cargo = introducirString("Cargo");
         String fecha = introducirFecha("Fecha de inicio");
         int salario = introducirSalario("Salario");
+        boolean activo = true;
 
         Empleado empleado1 = new Empleado(nombre, apellido, cargo, salario, fecha);
         control.crearEmpleado(empleado1);
@@ -153,50 +154,15 @@ public class MetodosEmpleado {
         }
     }
 
-//    public void actualizarEmpleado() {
-//        System.out.println("Introduzca el Id del empleado que quiere editar");
-//        int id = Lectura.leerInt();
-//        Empleado empleado = control.traerEmpleado(id);
-//        System.out.println(empleado);
-//
-//        System.out.println("Introduzca el dato que quiere cambiar");
-//        String campo = Lectura.leerLinea();
-//
-//        System.out.println("Introduzca el valor que quiere asignar al campo " + campo);
-//
-//        switch (campo) {
-//            case "apellido":
-//                String apellido = Lectura.leerLinea();
-//                empleado.setApellido(apellido);
-//                break;
-//            case "nombre":
-//                String nombre = Lectura.leerLinea();
-//                empleado.setNombre(nombre);
-//                break;
-//            case "cargo":
-//                String cargo = Lectura.leerLinea();
-//                empleado.setCargo(cargo);
-//                break;
-//            case "salario":
-//                int salario = Lectura.leerInt();
-//                empleado.setSalario(salario);
-//                break;
-//            case "fechainicio":
-//                String fechaInicio = Lectura.leerLinea();
-//                empleado.setFechaInicio(fechaInicio);
-//                break;
-//            default:
-//                System.out.println("El campo introducido no es válido. Opciones válidas: apellido, nombre, cargo, salario, fechainicio");
-//        }
-//
-//        control.editarEmpleado(empleado);
-//    }
-
     public void eliminarEmpleado() {
-        System.out.println("Introduzca el id del empleado que desea eliminar");
+        System.out.println("Introduzca el Id del empleado que quiere eliminar");
         int id = Lectura.leerInt();
-        control.eliminarEmpleado(id);
+        Empleado empleado = control.traerEmpleado(id);
+        empleado.setActivo(false);
+        control.editarEmpleado(empleado);
+        System.out.println("Ha eliminado el empleado con Id " +id );
     }
+
 
     public void empleadoPorCargo() {
         System.out.println("Introduzca el cargo que desempeñan los empleados de los que quiere la lista:");

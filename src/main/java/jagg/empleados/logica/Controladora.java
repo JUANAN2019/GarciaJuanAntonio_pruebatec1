@@ -11,9 +11,6 @@ public class Controladora {
         controlPersis.crearEmpleado(empleado);
     }
 
-    public void eliminarEmpleado(int id) {
-        controlPersis.eliminarEmpleado(id);
-    }
     
     public List<Empleado> traerEmpleados(){
         return controlPersis.traerEmpleados();

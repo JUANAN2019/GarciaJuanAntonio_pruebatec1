@@ -1,4 +1,5 @@
 package jagg.empleados.persistencia;
+
 import jagg.empleados.logica.Empleado;
 import jagg.empleados.persistencia.exceptions.NonexistentEntityException;
 import java.io.Serializable;
@@ -11,14 +12,11 @@ import javax.persistence.Persistence;
 import javax.persistence.criteria.CriteriaQuery;
 import javax.persistence.criteria.Root;
 
-
 /**
  *
  * @author JUNAN
  */
 public class EmpleadoJpaController implements Serializable {
-
-   
 
     public EmpleadoJpaController(EntityManagerFactory emf) {
         this.emf = emf;
@@ -28,7 +26,8 @@ public class EmpleadoJpaController implements Serializable {
     public EntityManager getEntityManager() {
         return emf.createEntityManager();
     }
-    public EmpleadoJpaController(){
+
+    public EmpleadoJpaController() {
         emf = Persistence.createEntityManagerFactory("EmpleadoPU");
     }
 
@@ -91,7 +90,10 @@ public class EmpleadoJpaController implements Serializable {
     }
 
     public List<Empleado> findEmpleadoEntities() {
-        return findEmpleadoEntities(true, -1, -1);
+        //return findEmpleadoEntities(true, -1, -1);
+        EntityManager em = getEntityManager();
+        return em.createQuery("SELECT e FROM Empleado e WHERE e.activo = true", Empleado.class)
+                .getResultList();
     }
 
     public List<Empleado> findEmpleadoEntities(int maxResults, int firstResult) {
@@ -122,8 +124,9 @@ public class EmpleadoJpaController implements Serializable {
             em.close();
         }
     }
-     public List<Empleado> findByCargo(String cargo) {
-         EntityManager em = getEntityManager();
+
+    public List<Empleado> findByCargo(String cargo) {
+        EntityManager em = getEntityManager();
         // Consulta personalizada para buscar empleados por cargo
         // Aquí asumimos que "cargo" es un atributo en la clase Empleado
         // Ajusta esto según tu diseño específico
@@ -131,7 +134,6 @@ public class EmpleadoJpaController implements Serializable {
                 .setParameter("cargo", cargo)
                 .getResultList();
     }
-
 
     public int getEmpleadoCount() {
         EntityManager em = getEntityManager();
@@ -145,5 +147,5 @@ public class EmpleadoJpaController implements Serializable {
             em.close();
         }
     }
-    
+
 }
