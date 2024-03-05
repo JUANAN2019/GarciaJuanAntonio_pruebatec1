@@ -51,6 +51,33 @@ public class MetodosEmpleado {
 
         Empleado empleado1 = new Empleado(nombre, apellido, cargo, salario, fecha);
         control.crearEmpleado(empleado1);
+        System.out.println("Empleado agregado.");
+        boolean campoValido = false;
+        while (!campoValido) {
+            System.out.println("¿Qué desea hacer a continuación?");
+            System.out.println("1. Agregar otro empleado");
+            System.out.println("2. Volver al menú principal");
+            System.out.println("3. Salir del programa");
+
+            int opcion = Lectura.leerInt();
+
+            switch (opcion) {
+                case 1:
+                    agregarEmpleado();
+                    campoValido = true;
+                    break;
+                case 2:
+                    menuInicial();
+                    campoValido = true;
+                    break;
+                case 3:
+                    salirPrograma();
+                    campoValido = true;
+                    break;
+                default:
+                    System.out.println("Opción no válida. Por favor, introduzca una opción del 1 al 3.");
+            }
+        }
     }
 
     public String introducirString(String nombreVariable) {
@@ -74,6 +101,7 @@ public class MetodosEmpleado {
         for (Empleado emp : empleados) {
             System.out.println(emp.toString());
         }
+       menuDosOp();
     }
 
     public void actualizarEmpleado() {
@@ -158,11 +186,43 @@ public class MetodosEmpleado {
         System.out.println("Introduzca el Id del empleado que quiere eliminar");
         int id = Lectura.leerInt();
         Empleado empleado = control.traerEmpleado(id);
-        empleado.setActivo(false);
-        control.editarEmpleado(empleado);
-        System.out.println("Ha eliminado el empleado con Id " +id );
-    }
+        System.out.println(empleado);
 
+        if(!empleado.isActivo()){
+            System.out.println("Ese empleado ya esta eliminado");
+        }else{
+            empleado.setActivo(false);
+            control.editarEmpleado(empleado);
+            System.out.println("Ha eliminado el empleado con Id " +id );
+        }
+
+        boolean campoValido = false;
+        while (!campoValido) {
+            System.out.println("¿Qué desea hacer a continuación?");
+            System.out.println("1. Eliminar otro empleado");
+            System.out.println("2. Volver al menú principal");
+            System.out.println("3. Salir del programa");
+
+            int opcion = Lectura.leerInt();
+
+            switch (opcion) {
+                case 1:
+                    eliminarEmpleado();
+                    campoValido = true;
+                    break;
+                case 2:
+                    menuInicial();
+                    campoValido = true;
+                    break;
+                case 3:
+                    salirPrograma();
+                    campoValido = true;
+                    break;
+                default:
+                    System.out.println("Opción no válida. Por favor, introduzca una opción del 1 al 3.");
+            }
+        }
+    }
 
     public void empleadoPorCargo() {
         System.out.println("Introduzca el cargo que desempeñan los empleados de los que quiere la lista:");
@@ -173,8 +233,33 @@ public class MetodosEmpleado {
         for (Empleado emp : empleados) {
             System.out.println(emp.toString());
         }
+
+        menuDosOp();
     }
     public void salirPrograma(){
         System.out.println("Ha salido del programa.");
     }
+   public void menuDosOp(){
+       boolean campoValido = false;
+       while (!campoValido) {
+           System.out.println("¿Qué desea hacer a continuación?");
+           System.out.println("1. Volver al menú principal");
+           System.out.println("2. Salir del programa");
+
+           int opcion = Lectura.leerInt();
+
+           switch (opcion) {
+               case 1:
+                   menuInicial();
+                   campoValido = true;
+                   break;
+               case 2:
+                   salirPrograma();
+                   campoValido = true;
+                   break;
+               default:
+                   System.out.println("Opción no válida. Por favor, introduzca una opción del 1 al 2.");
+           }
+       }
+   }
 }
