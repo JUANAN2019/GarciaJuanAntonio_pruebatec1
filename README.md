@@ -33,6 +33,7 @@ Gerencia:
 * Identificar empleados por cargo o cargo.
 * Evaluar el desempeño del equipo.
 * Tomar decisiones estratégicas sobre la gestión del personal.
+
 # Tecnologías utilizadas:
 
 * Desarrollo: Java.
