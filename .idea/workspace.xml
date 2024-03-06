@@ -5,13 +5,8 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="39957dad-9a6b-4114-8eb9-1af81548a9fa" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/.idea/.gitignore" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/encodings.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/jarRepositories.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/jagg/empleados/logica/Lectura.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/jagg/empleados/logica/MetodosEmpleado.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/compiler.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/compiler.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/empleados.sql" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__com_google_protobuf_protobuf_java_3_21_9.xml" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__com_mysql_mysql_connector_j_8_0_33.xml" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_eclipse_persistence_jakarta_persistence_2_2_3.xml" beforeDir="false" />
@@ -22,27 +17,10 @@
       <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_eclipse_persistence_org_eclipse_persistence_jpa_jpql_2_7_10.xml" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_eclipse_persistence_org_eclipse_persistence_jpa_modelgen_processor_2_7_10.xml" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_eclipse_persistence_org_eclipse_persistence_moxy_2_7_10.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/modules.xml" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Empleados.iml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/jagg/empleados/Empleados.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/jagg/empleados/Empleados.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/jagg/empleados/logica/Controladora.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/jagg/empleados/logica/Controladora.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/jagg/empleados/logica/Empleado.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/jagg/empleados/logica/Empleado.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/jagg/empleados/persistencia/ControladoraPersistencia.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/jagg/empleados/persistencia/ControladoraPersistencia.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/jagg/empleados/persistencia/EmpleadoJpaController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/jagg/empleados/persistencia/EmpleadoJpaController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/jagg/empleados/Empleados.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/jagg/empleados/Empleados.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/jagg/empleados/logica/Controladora.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/jagg/empleados/logica/Controladora.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/jagg/empleados/logica/Empleado.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/jagg/empleados/logica/Empleado.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/jagg/empleados/logica/Empleado_.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/jagg/empleados/persistencia/ControladoraPersistencia.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/jagg/empleados/persistencia/ControladoraPersistencia.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/jagg/empleados/persistencia/EmpleadoJpaController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/jagg/empleados/persistencia/EmpleadoJpaController.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/jagg/empleados/persistencia/exceptions/IllegalOrphanException.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/jagg/empleados/persistencia/exceptions/IllegalOrphanException.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/jagg/empleados/persistencia/exceptions/NonexistentEntityException.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/jagg/empleados/persistencia/exceptions/NonexistentEntityException.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/jagg/empleados/persistencia/exceptions/PreexistingEntityException.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/jagg/empleados/persistencia/exceptions/PreexistingEntityException.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/generated-sources/annotations/jagg/empleados/logica/Empleado_.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/maven-status/maven-compiler-plugin/compile/default-compile/createdFiles.lst" beforeDir="false" afterPath="$PROJECT_DIR$/target/maven-status/maven-compiler-plugin/compile/default-compile/createdFiles.lst" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/maven-status/maven-compiler-plugin/compile/default-compile/inputFiles.lst" beforeDir="false" afterPath="$PROJECT_DIR$/target/maven-status/maven-compiler-plugin/compile/default-compile/inputFiles.lst" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/generated-sources/annotations/jagg/empleados/logica/Empleado_.java" beforeDir="false" afterPath="$PROJECT_DIR$/target/generated-sources/annotations/jagg/empleados/logica/Empleado_.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -51,6 +29,9 @@
   </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="MarkdownSettingsMigration">
+    <option name="stateVersion" value="1" />
   </component>
   <component name="ProjectColorInfo">{
   &quot;associatedIndex&quot;: 6
@@ -65,8 +46,10 @@
     "Application.Empleados.executor": "Run",
     "RunOnceActivity.OpenProjectViewOnStart": "true",
     "RunOnceActivity.ShowReadmeOnStart": "true",
-    "git-widget-placeholder": "Merging main",
-    "kotlin-language-version-configured": "true"
+    "SHARE_PROJECT_CONFIGURATION_FILES": "true",
+    "git-widget-placeholder": "main",
+    "kotlin-language-version-configured": "true",
+    "last_opened_file_path": "C:/Users/JUNAN/Desktop/PruebasTecnicas/Empleados"
   }
 }]]></component>
   <component name="SharedIndexes">
