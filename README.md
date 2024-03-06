@@ -68,4 +68,4 @@ Gerencia:
 # Contacto:
 
 * Si deseas ponerte en contacto conmigo, puedes hacerlo a través de linkedin:
-LinkedIn: https://www.linkedin.com/in/juan-agg
+ https://www.linkedin.com/in/juan-agg
