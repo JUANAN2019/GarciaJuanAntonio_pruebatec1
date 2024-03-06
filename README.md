@@ -10,9 +10,11 @@ Menú principal:
 * Buscar empleados por cargo.
 * Salir.
 
-##Imagen del funcionamiento de la aplicacion
-![Image](/imagenes/Creacion%20empleado.png)(400pxx400px)
+# Imagen del funcionamiento de la aplicacion
 
+![Imagen funcionamiento aplicacion](/imagenes/Creacion%20empleado.png)<br><br>
+<img src="https://github.com/JUANAN2019/GarciaJuanAntonio_pruebatec1/blob/main/imagenes/Creacion%20empleado.png" width="400" height="400"><br><br>
+<img src="imagenes/Creacion%20empleado.png" style="height:400px; width:400px"/><br><br>
 ![Image](/imagenes/listarUsuarios.png)
 # Problemas que resuelve:
 
