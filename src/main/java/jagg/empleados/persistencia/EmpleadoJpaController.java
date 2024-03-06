@@ -1,6 +1,5 @@
 package jagg.empleados.persistencia;
 
-import jagg.empleados.Empleados;
 import jagg.empleados.logica.Empleado;
 import jagg.empleados.persistencia.exceptions.NonexistentEntityException;
 import java.io.Serializable;
@@ -13,14 +12,11 @@ import javax.persistence.Persistence;
 import javax.persistence.criteria.CriteriaQuery;
 import javax.persistence.criteria.Root;
 
-
 /**
  *
  * @author JUNAN
  */
 public class EmpleadoJpaController implements Serializable {
-
-   
 
     public EmpleadoJpaController(EntityManagerFactory emf) {
         this.emf = emf;
@@ -30,7 +26,8 @@ public class EmpleadoJpaController implements Serializable {
     public EntityManager getEntityManager() {
         return emf.createEntityManager();
     }
-    public EmpleadoJpaController(){
+
+    public EmpleadoJpaController() {
         emf = Persistence.createEntityManagerFactory("EmpleadoPU");
     }
 
@@ -92,8 +89,12 @@ public class EmpleadoJpaController implements Serializable {
         }
     }
 
+    //Trae los empleados que tienen el campo activo en true, (borrado logico)
     public List<Empleado> findEmpleadoEntities() {
-        return findEmpleadoEntities(true, -1, -1);
+        //return findEmpleadoEntities(true, -1, -1);
+        EntityManager em = getEntityManager();
+        return em.createQuery("SELECT e FROM Empleado e WHERE e.activo = true", Empleado.class)
+                .getResultList();
     }
 
     public List<Empleado> findEmpleadoEntities(int maxResults, int firstResult) {
@@ -124,6 +125,13 @@ public class EmpleadoJpaController implements Serializable {
             em.close();
         }
     }
+    //Trae los empleados filtrados por cargo
+    public List<Empleado> findByCargo(String cargo) {
+        EntityManager em = getEntityManager();
+        return em.createQuery("SELECT e FROM Empleado e WHERE e.cargo = :cargo", Empleado.class)
+                .setParameter("cargo", cargo)
+                .getResultList();
+    }
 
     public int getEmpleadoCount() {
         EntityManager em = getEntityManager();
@@ -137,5 +145,5 @@ public class EmpleadoJpaController implements Serializable {
             em.close();
         }
     }
-    
+
 }
