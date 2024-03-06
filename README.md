@@ -14,7 +14,7 @@ Menú principal:
 
 ![Imagen funcionamiento aplicacion](/imagenes/Creacion%20empleado.png)<br><br>
 <img src="https://github.com/JUANAN2019/GarciaJuanAntonio_pruebatec1/blob/main/imagenes/Creacion%20empleado.png" width="400" height="400"><br><br>
-<img src="imagenes/Creacion%20empleado.png" style="height:400px; width:400px"/><br><br>
+<img src="https://drive.google.com/file/d/1n75ZhPDwWMaSTe-s4bVW_9QuX5AO904g/view?usp=drive_link" style="height:400px; width:400px"/><br><br>
 ![Image](/imagenes/listarUsuarios.png)
 # Problemas que resuelve:
 
