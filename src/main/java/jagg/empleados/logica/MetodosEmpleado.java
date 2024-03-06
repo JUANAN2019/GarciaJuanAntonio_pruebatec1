@@ -2,6 +2,7 @@ package jagg.empleados.logica;
 
 import java.util.List;
 
+//Clase que crea los metodos para comunicarse con la Clase Controladora y crea los menus y submenus de la aplicacion
 public class MetodosEmpleado {
 
     Controladora control = new Controladora();
@@ -86,6 +87,7 @@ public class MetodosEmpleado {
     }
 
     public String introducirFecha(String nombreVariable) {
+        //verifica el String introuducido con una expresion regular para que cumpla con el formato
         String regex = "^(0[1-9]|[1-2][0-9]|3[0-1])/(0[1-9]|1[0-2])/(19|20)\\d{2}$";
         String fecha = "";
         boolean fechaOk = false;

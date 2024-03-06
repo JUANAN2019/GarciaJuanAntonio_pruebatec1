@@ -89,6 +89,7 @@ public class EmpleadoJpaController implements Serializable {
         }
     }
 
+    //Trae los empleados que tienen el campo activo en true, (borrado logico)
     public List<Empleado> findEmpleadoEntities() {
         //return findEmpleadoEntities(true, -1, -1);
         EntityManager em = getEntityManager();
@@ -124,7 +125,7 @@ public class EmpleadoJpaController implements Serializable {
             em.close();
         }
     }
-
+    //Trae los empleados filtrados por cargo
     public List<Empleado> findByCargo(String cargo) {
         EntityManager em = getEntityManager();
         return em.createQuery("SELECT e FROM Empleado e WHERE e.cargo = :cargo", Empleado.class)
