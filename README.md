@@ -10,9 +10,10 @@ Menú principal:
 * Buscar empleados por cargo.
 * Salir.
 
-![Image](https://drive.google.com/file/d/1n75ZhPDwWMaSTe-s4bVW_9QuX5AO904g/view?usp=drive_link)
+##Imagen del funcionamiento de la aplicacion
+![Image](/imagenes/Creacion%20empleado.png)(400pxx400px)
 
-![Image](https://drive.google.com/file/d/1n75ZhPDwWMaSTe-s4bVW_9QuX5AO904g/view)
+![Image](/imagenes/listarUsuarios.png)
 # Problemas que resuelve:
 
 Organización y centralización de la información: Almacena todos los datos de los empleados en un único lugar, facilitando su consulta y gestión.
@@ -34,10 +35,10 @@ Gerencia:
 * Tomar decisiones estratégicas sobre la gestión del personal.
 # Tecnologías utilizadas:
 
-Desarrollo: Java.
-Base de datos: MySQL.
-Proveedor JPA: Eclipse Link.
-IDEs: Netbeans 17 , Intellij
+* Desarrollo: Java.
+* Base de datos: MySQL.
+* Proveedor JPA: Eclipse Link.
+* IDEs: Netbeans 17 , Intellij
 
 # Instalación:
 
@@ -45,6 +46,7 @@ IDEs: Netbeans 17 , Intellij
 
 * Java 8 o superior.
 * MySQL 8 o superior.
+* IDE Netbeans, Intellij
 ## Pasos:
 
 * Descargar el código fuente del proyecto.
@@ -59,11 +61,10 @@ IDEs: Netbeans 17 , Intellij
 * Sigue las instrucciones en pantalla para utilizar cada funcionalidad.
 # Documentación:
 
-La documentación completa del proyecto está disponible en https://drive.google.com/file/d/1R_57j5J4NMWbQZkpAKT0Ghv7okhOYPyq/view?usp=drive_link
-# Contribución:
+* La documentación completa del proyecto está disponible en :
+  https://drive.google.com/file/d/1ducGzak1qbvjuGFQrg-_qiLsE2mx0zVI/view?usp=sharing
 
-Si deseas contribuir al proyecto, puedes hacerlo a través de GitHub.
-Sigue las instrucciones en el archivo CONTRIBUTING.md para enviar tus pull requests.
 # Contacto:
 
-Para cualquier duda o problema, puedes contactar con el equipo de desarrollo a través de la siguiente dirección de correo electrónico: correo electrónico del equipo: correo electrónico del equipo.
+* Si deseas ponerte en contacto conmigo, puedes hacerlo a través de linkedin:
+LinkedIn: https://www.linkedin.com/in/juan-agg
